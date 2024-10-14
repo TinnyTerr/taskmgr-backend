@@ -1,21 +1,28 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "tsup": "^8.3.0"
-  },
-  "dependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "express": "^4.21.1",
-    "logmatic": "^1.4.2"
-  }
+	"name": "backend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"prestart": "npx tsup",
+		"check": "npx @biomejs/biome check",
+		"lint": "npx @biomejs/biome lint --write && npx @biomejs/biome format --write",
+		"start": "node dist/index"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@types/express": "^5.0.0",
+		"@types/ws": "^8.5.12",
+		"jest": "^29.7.0",
+		"tsup": "^8.3.0",
+		"typescript": "^5.6.3"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^1.9.3",
+		"express": "^4.21.1",
+		"express-ws": "^5.0.2",
+		"logmatic": "^1.4.2"
+	}
 }
